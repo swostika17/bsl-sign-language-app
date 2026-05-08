@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSL Voice Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="app-container">
+
+    <!-- Welcome Screen -->
+    <div id="welcomeScreen" class="welcome-screen">
+        <div class="header">
+            <div class="logo">👐 BSL Voice Assistant</div>
+            <div class="developer">by Swostika Lama</div>
+        </div>
+
+        <div class="ai-greeting" id="aiGreeting">
+            <h1 style="margin-bottom:10px;">Real-Time Sign Language Translator</h1>
+            <p style="font-size:18px; line-height:1.6;">
+                This is a live demonstration of British Sign Language recognition.<br>
+                Use your hands in front of the camera and watch your gestures<br>
+                instantly converted into spoken English.
+            </p>
+        </div>
+
+        <button class="start-btn" onclick="startApp()">
+            🚀 Start Demo
+        </button>
+    </div>
+
+    <!-- Main App -->
+    <div id="mainApp" class="main-app" style="display:none;">
+
+        <!-- Camera -->
+        <div class="video-container">
+            <video id="video" autoplay muted playsinline></video>
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <!-- Translator Output -->
+        <div class="translator-section">
+            <div class="translator-card">
+                <div class="sign-display" id="signDisplay">👐</div>
+                <div class="text-translation" id="textTranslation">
+                    Show your BSL sign
+                </div>
+            </div>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-item">
+                <div class="status-number" id="handsCount">0</div>
+                <div class="status-label">Hands Detected</div>
+            </div>
+
+            <div class="status-item">
+                <div class="status-number" id="confidence">0%</div>
+                <div class="status-label">Confidence</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- MediaPipe -->
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3/camera_utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.3/drawing_utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4/hands.js"></script>
+
+<!-- Your JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
